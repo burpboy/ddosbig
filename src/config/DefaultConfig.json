@@ -1,0 +1,14 @@
+{
+    "target_ip": "159.60.136.200",
+    "target_port": 443,
+    "attack_mode": "HTTP",
+    "threads_count": 16,
+    "duration_seconds": 300,
+    "payload_size": 1024,
+    "random_payload": true,
+    "spoof_ip": true,
+    "socket_buffer_size_kb": 512,
+    "fast_reconnect": true,
+    "verbose_log": true,
+    "log_file_path": "brutal_ddos.log"
+}
