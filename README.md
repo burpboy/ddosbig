@@ -13,52 +13,7 @@ Configurable: JSON/YAML configuration support with sensible defaults.
 Modular Architecture: Easy to extend with new protocol handlers or amplification modules.
 Logging & Monitoring: Detailed logging with color output and latency monitoring.
 Cross-Platform Ready: Core logic supports Linux (epoll/io_uring) with potential for other OS adaptations.
-Directory Structure
-text
-Download
-Copy
-BrutalDDoS/
-├── CMakeLists.txt          # Main build configuration
-├── README.md               # This file
-├── LICENSE                 # License (MIT/GPL)
-├── src/
-│   ├── main.cpp            # Entry point: argument parsing, global init
-│   ├── config/
-│   │   ├── ConfigParser.h/cpp  # Parses .conf/.json files
-│   │   └── DefaultConfig.json    # Default settings
-│   ├── core/
-│   │   ├── AttackEngine.h/cpp      # Orchestrator, scheduling, load balancing
-│   │   ├── PacketGenerator.h/cpp   # Raw packet generation (Eth/IP/TCP/UDP)
-│   │   └── Fuzzer.h              # Random header/payload fuzzing
-│   ├── network/
-│   │   ├── SocketManager.h/cpp     # IPv4/IPv6, TCP/UDP socket management
-│   │   ├── AsyncIO.h/cpp           # epoll/kqueue/io_uring wrapper
-│   │   └── ProtocolHandlers/
-│   │       ├── HttpFlood.h/cpp     # Realistic HTTP GET/POST requests
-│   │       ├── UdpFlood.h/cpp      # Large payload UDP floods
-│   │       └── SynFlood.h/cpp      # Partial TCP handshake spoofing
-│   ├── utils/
-│   │   ├── Logger.h/cpp            # Colored console/file logging
-│   │   ├── Timer.h/cpp             # High-res latency monitoring
-│   │   ├── RandomUtils.h           # IP spoofing & random payload gen
-│   │   └── StringUtils.h           # String/hex utilities
-│   └── modules/                  # Optional plugins
-│       ├── DnsAmplification.h/cpp
-│       └── NtpAmplification.h/cpp
-├── include/
-│   └── BrutalDDoS_API.h          # Public API for library usage
-├── tests/                        # Unit tests (Google Test/Catch2)
-├── scripts/
-│   ├── build.sh                  # Automated Linux build script
-│   ├── run_benchmark.sh          # Speed benchmarking
-│   └── kill_ddos.sh              # Process cleanup
-├── docs/                         # Technical documentation
-│   ├── architecture.md
-│   ├── protocols.md
-│   └── performance_tuning.md
-└── third_party/
-    ├── nlohmann/json.hpp         # JSON parsing
-    └── spdlog/include/           # Fast logging library
+
 Installation
 Prerequisites
 C++17 or higher compiler (GCC, Clang)
@@ -203,5 +158,3 @@ Acknowledgments
 nlohmann/json for JSON parsing.
 spdlog for fast logging.
 Google Test / Catch2 for testing framework.
-
-https://notrack.ai/
